@@ -38,7 +38,7 @@
 	 		 <td/> <%= genderList.get(i) %>
 	 		 <td/> <button onclick = "location.href='01_13_adminUserDelete.jsp?index=<%=i%>'"> 삭제 </button> 
 	  		</tr>
- 	 <% } %>in
+ 	 <% } %>
 
 	</table>
 	

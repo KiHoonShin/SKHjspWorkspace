@@ -7,6 +7,7 @@ ArrayList<String> idList = (ArrayList<String>) session.getAttribute("idList");
 ArrayList<String> pwList = (ArrayList<String>) session.getAttribute("pwList");
 ArrayList<String> nameList = (ArrayList<String>) session.getAttribute("namelist");
 ArrayList<String> genderList = (ArrayList<String>) session.getAttribute("genderList");
+String delName = nameList.get(idx);
 
 for(int i = 0; i < idList.size(); i+=1){
 	if(idx == i){
@@ -17,7 +18,6 @@ for(int i = 0; i < idList.size(); i+=1){
 	}
 }
 
-
 %>
 <!DOCTYPE html>
 <html>
@@ -26,6 +26,9 @@ for(int i = 0; i < idList.size(); i+=1){
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>alert('<%= nameList.get(idx)%> 회원 삭제 완료')</h1>
+<script>
+	alert('<%=delName %> 회원 삭제 완료');
+	location.href = "01_12_adminUserList.jsp";
+</script>
 </body>
 </html>

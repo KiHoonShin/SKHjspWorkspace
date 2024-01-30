@@ -19,9 +19,9 @@
 	 <td> <input type ="text" name = "pw"/></td>
 	</tr>
 	<tr>
-	<!--  <td><input type ="submit" name = "log-in" value="로그인"/></td> -->
-	<td><input type ="submit" name = "log-in" value ="로그인"/></td>
+	  <td colspan="2" align="center"><input type="submit" name = "log-in" value="로그인"></td>
 	</tr>
+
 	
  </table>
 </form>
