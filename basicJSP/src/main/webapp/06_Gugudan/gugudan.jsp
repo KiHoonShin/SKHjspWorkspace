@@ -3,11 +3,11 @@
     pageEncoding="UTF-8"%>
     
 <%
-if(session.getAttribute("dao")== null){
+if(session.getAttribute("Gdao")== null){
 	response.sendRedirect("index.jsp");
 	return;
 }
-GugudanDAO dao = (GugudanDAO)session.getAttribute("dao");
+GugudanDAO Gdao = (GugudanDAO)session.getAttribute("dao");
 
 %>    
 <!DOCTYPE html>
@@ -19,18 +19,18 @@ GugudanDAO dao = (GugudanDAO)session.getAttribute("dao");
 <body>
  <h1> 구구단 게임 </h1>
  
-<% if(dao.getCount() < 5){ %>
- <h2> <%= dao.getCount()+1 %> 번째 문제 (현재 점수 : <%= dao.getScore() %>) </h2>
+<% if(Gdao.getCount() < 5){ %>
+ <h2> <%= Gdao.getCount()+1 %> 번째 문제 (현재 점수 : <%= Gdao.getScore() %>) </h2>
  
  <form action="gugudanPro.jsp">
- <h2> <%= dao.getQuiz() %> = 
+ <h2> <%= Gdao.getQuiz() %> = 
  <input type="number" name="answer" required />
  </h2>
  <button> 전송 </button>
  </form>
  
  <%}else{ %>
- <h1> 게임 종료! 당신의 총점수 <%= dao.getScore() %></h1>
+ <h1> 게임 종료! 당신의 총점수 <%= Gdao.getScore() %></h1>
  <a href="index.jsp"> 처음으로 </a>
  <% } %>
 </body>

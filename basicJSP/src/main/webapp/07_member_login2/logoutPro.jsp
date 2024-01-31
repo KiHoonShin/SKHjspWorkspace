@@ -1,10 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file ="./common.jsp" %>
 <%
-if(session.getAttribute("log")== null){
-	  response.sendRedirect("index.jsp");
-}
 
-session.setAttribute("log", -1);
-response.sendRedirect("main.jsp");
+if(dao.getLog() == -1){
+	   response.sendRedirect("loginForm.jsp");
+	   return;
+}
+dao.setLog(-1);
+if(session.getAttribute("admin") != null){
+	  session.removeAttribute("admin");
+}
 %>
+
+<script>
+	msgGoMain("로그아웃 성공");
+</script>

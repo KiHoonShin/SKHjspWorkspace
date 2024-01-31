@@ -4,14 +4,14 @@
 
 <%
 
-if(session.getAttribute("dao")== null){
+if(session.getAttribute("Gdao")== null){
 	response.sendRedirect("index.jsp");
 	return;
 }
-GugudanDAO dao = (GugudanDAO)session.getAttribute("dao");
+GugudanDAO Gdao = (GugudanDAO)session.getAttribute("dao");
   
  String answer = request.getParameter("answer");
- boolean check = dao.checkAnswer(answer);
+ boolean check = Gdao.checkAnswer(answer);
  
 
  

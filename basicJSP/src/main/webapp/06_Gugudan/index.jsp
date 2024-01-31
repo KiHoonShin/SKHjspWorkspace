@@ -3,12 +3,12 @@
     pageEncoding="UTF-8"%>
     
 <%
-GugudanDAO dao = null; 
-if(session.getAttribute("dao")== null){
-	session.setAttribute("dao", new GugudanDAO());
+GugudanDAO Gdao = null; 
+if(session.getAttribute("Gdao")== null){
+	session.setAttribute("Gdao", new GugudanDAO());
 }else{
-  dao = (GugudanDAO)session.getAttribute("dao");
-	if(dao.getCount() >= 5){
+	Gdao = (GugudanDAO)session.getAttribute("Gdao");
+	if(Gdao.getCount() >= 5){
 		session.invalidate();
 		response.sendRedirect("index.jsp");
 	}

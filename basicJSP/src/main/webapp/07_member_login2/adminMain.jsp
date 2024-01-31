@@ -1,15 +1,8 @@
 <%@page import="member.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+    <%@ include file="./header.jsp" %>    
 <% 
-
-if(session.getAttribute("dao")== null){
-	response.sendRedirect("main.jsp");
-	return;
-}
-MemberDAO dao = (MemberDAO)session.getAttribute("dao");
-
 
   if(session.getAttribute("log")== null){
 	  response.sendRedirect("index.jsp");
