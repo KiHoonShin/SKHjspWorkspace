@@ -23,7 +23,7 @@ int log = (int)session.getAttribute("log");
 			 genderList.remove(log);
 		 }
 	 }
-	 session.invalidate();
+	 session.setAttribute("log", -1);
  }
 
 %>

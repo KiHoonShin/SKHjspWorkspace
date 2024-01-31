@@ -23,11 +23,11 @@
 	
 	<table border="1">
 	<tr>
-	 <td/> 아이디
-	 <td/> 패스워드
-	 <td/> 이름
-	 <td/> 성별
-	 <td/> 삭제
+	 <th/> 아이디
+	 <th/> 패스워드
+	 <th/> 이름
+	 <th/> 성별
+	 <th/> 삭제
 	</tr>
 	
 	 <% for(int i = 0; i < idList.size(); i+=1){ %>

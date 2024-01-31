@@ -1,7 +1,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-  
+  <script type="text/javascript" src="commom.js"></script>
 <%
 ArrayList<String> idList = (ArrayList<String>)session.getAttribute("idList");
 ArrayList<String> pwList = (ArrayList<String>)session.getAttribute("pwList");
@@ -22,8 +22,6 @@ if(inputPw.equals(userPw)){
 	samePw = true;
 	nameList.set(log, inputName);
 	genderList.set(log, inputGender);
-	session.setAttribute("namelist", nameList);
-	session.setAttribute("genderList", genderList);
 }
 
 %>
