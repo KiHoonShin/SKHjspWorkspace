@@ -20,15 +20,15 @@
 			</tr>
 			<tr>
 			 <th/> 작성자
-			 <td/><input name = "writer"/>
+			 <td/><input name = "writer" required/>
 			</tr>
 			<tr>
 			 <th/> 제목
-			 <td/> <input type = "text" name ="subject"/>
+			 <td/> <input type = "text" name ="subject" required/>
 			</tr>
 			<tr>
 			 <th/> 내용
-			 <td><textarea cols="20" rows="10" name = "textarea"></textarea></td>
+			 <td><textarea cols="20" rows="10" name = "textarea" required></textarea></td>
 			</tr>
 			<tr>
 			 <td><input type = "submit" value="작성완료"/></td>

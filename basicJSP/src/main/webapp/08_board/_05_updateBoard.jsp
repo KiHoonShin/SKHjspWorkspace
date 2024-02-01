@@ -2,6 +2,9 @@
     pageEncoding="UTF-8"%>
  <%@ include file='./common.jsp' %>    
 <%
+	if(request.getParameter("index") == null){
+		response.sendRedirect("_00_main.jsp");
+	}
 	int idx = Integer.parseInt(request.getParameter("index"));
 %>
 <!DOCTYPE html>
@@ -16,7 +19,7 @@
 		<table border ='1'>
 			<tr>
 			 <th/> 번호 
-			 <td/> <%= daoB.getOneMember(idx).getNo() %>
+			 <td colspan ="3" > <%= daoB.getOneMember(idx).getNo() %> </td>
 			</tr>
 			<tr>
 			 <th/> 작성자
@@ -26,14 +29,14 @@
 			</tr>
 			<tr>
 			 <th/> 제목
-			 <td><input type ="text" name = "subject" value="<%= daoB.getOneMember(idx).getSubject() %>"/> </td>
+			 <td colspan ="3" ><input type ="text" name = "subject" value="<%= daoB.getOneMember(idx).getSubject() %>" required/> </td>
 			</tr>
 			<tr>
 			<th/> 내용
-			<td><textarea cols="20" rows="10" name="textarea" value="textarea"><%=daoB.getOneMember(idx).getContents() %></textarea></td>
+			<td colspan ="3"><textarea cols="20" rows="10" name="textarea" value="textarea" required><%=daoB.getOneMember(idx).getContents() %></textarea></td>
 			</tr>
 			<tr>
-			 <td/><input type = "submit" value="수정하기"/>
+			 <td colspan ="4"><input type = "submit" value="수정하기"/></td>
 			</tr>
 		</table>
 	</form>

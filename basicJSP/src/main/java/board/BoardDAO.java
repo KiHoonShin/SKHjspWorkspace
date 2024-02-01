@@ -1,6 +1,7 @@
 package board;
 
 import java.util.ArrayList;
+import java.time.LocalDate;
 
 public class BoardDAO {
 
@@ -11,25 +12,19 @@ public class BoardDAO {
 	
 	public BoardDAO() {
 		boardList = new ArrayList<BoardVO>();
+		count = 1;
 		init();
-		
 	}
 	
 	private void init() {
-		BoardVO v1 = new BoardVO(1,"작성자1","2022-02-01","제목1","내용1");
-		BoardVO v2 = new BoardVO(2,"작성자2","2022-02-02","제목2","내용2");
-		BoardVO v3 = new BoardVO(3,"작성자3","2022-02-03","제목3","내용3");
-		count = 3;
+		BoardVO v1 = new BoardVO(count++,"작성자1","2022-02-01","제목1","내용1");
+		BoardVO v2 = new BoardVO(count++,"작성자2","2022-02-02","제목2","내용2");
+		BoardVO v3 = new BoardVO(count++,"작성자3","2022-02-03","제목3","내용3");
 		boardList.add(v1);
 		boardList.add(v2);
 		boardList.add(v3);
 	}
 	
-	private void countNumber() {
-		for(BoardVO v : boardList) {
-			count = v.getNo()+1;
-		}
-	}
 	
 	public int getLength() {
 		int idx = 0;
@@ -58,18 +53,26 @@ public class BoardDAO {
 	}
 	
 	public void addDummy() {
+		
+		LocalDate date = LocalDate.now();
+		
 		for(int i = 0; i < 10; i+=1) {
-			BoardVO v = new BoardVO(count++, "작성자"+count, "2024-02-01", "제목"+count,"내용"+count);
+			BoardVO v = new BoardVO(count, "작성자"+count, date.plusDays(i).toString(), "제목"+count,"내용"+count);
+			count += 1;
 			boardList.add(v);
 		}
 	}
 	
 	public void deleteAll() {
 		boardList = new ArrayList<BoardVO>();
+		count = 1;
 	}
 
+	public void deleteOne(int idx) {
+		boardList.remove(idx);
+	}
+	
 	public int getCount() {
-		countNumber();
 		return count;
 	}
 	
@@ -78,7 +81,10 @@ public class BoardDAO {
 	}
 
 	public void addBoard(String writer, String sub, String cont) {
-		BoardVO v = new BoardVO(count , writer, "2024-02-01", sub , cont );
+		
+		LocalDate date = LocalDate.now();
+		
+		BoardVO v = new BoardVO(count++ , writer, date.toString(), sub , cont );
 		boardList.add(v);
 	}
 	
