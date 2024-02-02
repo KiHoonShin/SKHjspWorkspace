@@ -1,17 +1,18 @@
 select * from member; -- alt + s -> 쿼리문 한줄 실행
 					  -- alt + x -> 선택한 줄들 실행
-drop table member; 
+drop table member;
 
 create table member(
-	num int primary key auto_increment,
-	id varchar(20) not null,
-	pass varchar(20) not null,
-	name varchar(20) not null,
-	age int not null,
-	email varchar(30) not null,
-	phone varchar(30) not null,
-	unique key(id)
+    num int primary key auto_increment,
+    id varchar(20) not null, 
+    pass varchar(20) not null,
+    name varchar(20) not null,
+    age int not null,
+    email varchar(30) not null,
+    phone varchar(30) not null,    
+    unique key(id)
 );
+
 
 desc member;
 
@@ -23,7 +24,13 @@ insert into member(id,pass,name,age,email,phone) values('test3','3333','테스�
 insert into member(id,pass,name,age,email,phone) values('test4','4444','테스트4',34,'test4@test.com','010-1111-1238');
 insert into member(id,pass,name,age,email,phone) values('test5','5555','테스트5',35,'test5@test.com','010-1111-1239');
 insert into member(id,pass,name,age,email,phone) values('test6','6666','테스트6',36,'test6@test.com','010-1111-1230');
-insert into member(id,pass,name,age,email,phone) values('test7','7777','테스트7',37,'test7@test.com','010-1111-1210'); 
+insert into member(id,pass,name,age,email,phone) values('test7','7777','테스트7',37,'test7@test.com','010-1111-1210');
 
-select * from member;
+select * from member where num = 6;
 
+delete from member where num = 3;
+
+update member set age=10 , email='tt', phone='12' where num = 6;
+
+select * from member where id = 'test2' and pass='2222';
+insert into member values(null,'test8','8888','테스트8',37,'test8@test.com','010-1111-1210');
