@@ -9,6 +9,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import kr.basic.model.MemberDAO;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import jakarta.servlet.http.HttpSession;
 
 
@@ -24,8 +26,16 @@ public class MemberLoginController extends HttpServlet {
 		String id = req.getParameter("id");
 		String pw = req.getParameter("pw");
 		int check = MemberDAO.getInstance().checkLogin(id, pw);
+		res.setCharacterEncoding("utf-8");
+		res.setContentType("text/html");
+		PrintWriter writer = res.getWriter();
 		if(check == 0) {
-			res.sendRedirect(ctx + "/memberList.do");
+			writer.println("<script> alert('로그인 실패');"
+					+ "location.href='"+ctx+"/memberList.do'"
+					+ "</script>");
+			
+			writer.close();
+			
 			return;
 		}
 		System.out.println("id = " + id + ", pw = " + pw);
@@ -33,8 +43,12 @@ public class MemberLoginController extends HttpServlet {
 		HttpSession session = req.getSession();
 		session.setAttribute("log", check);
 //		req.setAttribute("log", check);
-		RequestDispatcher rd = req.getRequestDispatcher("/memberList.do");
-		rd.forward(req, res);
+		writer.println("<script> alert('로그인 성공');"
+				+ "location.href='"+ctx+"/memberList.do'"
+				+ "</script>");
+		writer.close();
+//		RequestDispatcher rd = req.getRequestDispatcher("/memberList.do");
+//		rd.forward(req, res);
 		//res.sendRedirect(ctx + "/memberList.do");
 		
 	}
