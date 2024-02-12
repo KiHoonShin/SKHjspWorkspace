@@ -6,7 +6,7 @@ public class ViewResolver {
 		if(nextPage == "main") {
 			return "/WEB-INF/" + nextPage + ".jsp";
 		} else {
-			return "/WEB-INF/rentcar/" + nextPage + ".jsp";
+			return "/WEB-INF/user/" + nextPage + ".jsp";
 		}
 	}
 }

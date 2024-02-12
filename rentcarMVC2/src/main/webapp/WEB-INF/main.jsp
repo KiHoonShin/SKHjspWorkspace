@@ -32,13 +32,13 @@
 				  <table>
 					<tr height="500">
 					 <td align="center">
-						<img alt="" src="img/17.jpg" width="1000">
+						<img alt="" src="img/페라리.jpg" width="1000">
 					 </td>
 					</tr>
 				  </table>
 				</c:if>
 				<c:if test="${center ne null}">
-				  <c:redirect url="${ctx }/${center}"></c:redirect>
+				  <c:redirect url="${ctx }${center}"></c:redirect>
 				</c:if>
 			</td>
 		</tr>

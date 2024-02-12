@@ -12,19 +12,19 @@
 	<table>
 		<tr height="70">
 			<td colspan="4">
-				<a href="01_carMain.jsp" style="text-decoration: none">
+				<a href="${ctx}/main.do" style="text-decoration: none">
 				<img alt="" src="img/rent_logo.jpg" height="120">
 				</a>
 			</td>
 			<td align="center" width="200">
 			<c:if test="${log eq null }">
 				GUEST님
-				<button onclick="location.href='01_carMain.jsp?center=05_memberLogin.jsp'"> 로그인 </button>
+				<button onclick="location.href='${ctx}/loginCheck.do'"> 로그인 </button>
 				</c:if>
 	
 			<c:if test = "${log ne null}">
 				${log}님
-				<button onclick="location.href='07_memberLogout.jsp'"> 로그아웃 </button> 
+				<button onclick="location.href='${ctx}/loginCheck.do'"> 로그아웃 </button> 
 			</c:if>
 			</td>
 		</tr>
