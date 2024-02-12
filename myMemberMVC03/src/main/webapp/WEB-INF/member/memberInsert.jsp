@@ -7,6 +7,7 @@
   <tr>
     <td>아이디</td>
     <td><input class="col-12" type="text" name="id"/></td>
+    <td><button type = "button" id="btn">중복 확인</button></td>
   </tr>
   <tr>
     <td>패스워드</td>
@@ -36,3 +37,7 @@
   </tr>
 </table>
 </form>
+
+<script>
+	$()
+</script>

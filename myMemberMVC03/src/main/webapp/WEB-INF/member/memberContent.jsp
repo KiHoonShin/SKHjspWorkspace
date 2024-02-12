@@ -9,7 +9,7 @@
  
  <c:if test = "${member ne null}">
 <h1 class="py-3" > ${member.name} 회원의 상세보기 </h1>
-<form action="07_memberUpdatePro.jsp" method="post">
+<form action="${ctx}/memberUpdate.do?num=${member.num}" method="post">
 <input type="hidden" name="num" value="${member.num}"/>
 <table class='table table-bordered'>
   <tr>

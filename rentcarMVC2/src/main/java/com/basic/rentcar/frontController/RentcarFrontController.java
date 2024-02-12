@@ -1,22 +1,21 @@
-package kr.basic.frontcontroller;
+package com.basic.rentcar.frontController;
 
 import java.io.IOException;
 
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import kr.basic.controller.Controller;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("*.do")
-public class MemberFrontController extends HttpServlet{
-	
+public class RentcarFrontController extends HttpServlet{
+
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		request.setCharacterEncoding("utf-8");
+		
+		request.setCharacterEncoding("UTF-8");
 		String url = request.getRequestURI();
 		String ctx = request.getContextPath();
 		
@@ -36,6 +35,6 @@ public class MemberFrontController extends HttpServlet{
 				rd.forward(request, response);
 			}
 		}
-		
 	}
+	
 }
